@@ -342,6 +342,7 @@ export class Cli {
                 }
             }
 
+            /*
             fs.writeFile(
                 lockFile,
                 JSON.stringify({ process: process.pid }, null, "\t"),
@@ -367,6 +368,13 @@ export class Cli {
                     echo.run(options);
                 }
             );
+            */
+            process.on("SIGINT", () => process.exit());
+            process.on("SIGHUP", () => process.exit());
+            process.on("SIGTERM", () => process.exit());
+
+            echo.run(options);
+            
         });
     }
 
