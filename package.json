@@ -19,7 +19,7 @@
   "scripts": {
     "build": "tsc",
     "dev": "tsc -w",
-    "prepublish": "npm run build"
+    "prepare": "npm run build"
   },
   "dependencies": {
     "bottleneck": "^2.19.5",
